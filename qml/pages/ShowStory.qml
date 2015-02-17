@@ -15,11 +15,6 @@ Page {
 
         id: listView
 
-        PageHeader {
-            title: storyTitle
-            wrapMode: Text.WordWrap
-        }
-
         PullDownMenu {
             /*
             MenuItem {
@@ -44,38 +39,32 @@ Page {
 
             Label {
                 width: parent.width
-                anchors.topMargin: theme.paddingLarge
+                anchors.topMargin: Theme.paddingLarge
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 textFormat: Text.RichText
                 text: storyTitle
-                onLinkActivated: {
-                    Qt.openUrlExternally(link)
-                }
             }
 
             Label {
                 width: parent.width
-                anchors.topMargin: theme.paddingLarge
+                anchors.topMargin: Theme.paddingLarge
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 textFormat: Text.RichText
                 text: storyText
-                onLinkActivated: {
-                    Qt.openUrlExternally(link)
-                }
             }
 
             Label {
                 width: parent.width
-                anchors.topMargin: theme.paddingLarge
+                anchors.topMargin: Theme.paddingLarge
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
-                horizontalAlignment: Text.AlignHCenter
+                horizontalAlignment: Text.AlignLeft
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 textFormat: Text.RichText
                 text: storyUrl
