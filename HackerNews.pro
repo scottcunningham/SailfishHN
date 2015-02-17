@@ -24,8 +24,7 @@ OTHER_FILES += qml/HackerNews.qml \
     rpm/HackerNews.yaml \
     translations/*.ts \
     HackerNews.desktop \
-    qml/pages/ShowStory.qml \
-    qml/pages/BrowserView.qml
+    qml/pages/ShowStory.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

@@ -16,26 +16,20 @@ Page {
         id: listView
 
         PullDownMenu {
-            /*
-            MenuItem {
-                text: qsTr("Open URL fullscreen")
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("BrowserView.qml", {"displayUrl": storyUrl}))
-                }
-            }*/
             MenuItem {
                 text: qsTr("Open URL in browser")
                 onClicked: {
                     Qt.openUrlExternally(storyUrl)
                 }
             }
-
         }
 
         Column {
             id: column
-            width: page.width
+            width: parent.width
             spacing: Theme.paddingLarge
+
+            PageHeader { title: "Story" }
 
             Label {
                 width: parent.width
@@ -43,10 +37,12 @@ Page {
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
                 horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 textFormat: Text.RichText
                 text: storyTitle
             }
+            SectionHeader { text: "Story title" }
 
             Label {
                 width: parent.width
@@ -54,24 +50,26 @@ Page {
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
                 horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 textFormat: Text.RichText
-                text: storyText
+                text: storyUrl
             }
+            SectionHeader { text: "Source URL" }
 
             Label {
                 width: parent.width
                 anchors.topMargin: Theme.paddingLarge
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
-                horizontalAlignment: Text.AlignLeft
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 textFormat: Text.RichText
-                text: storyUrl
-                onLinkActivated: {
-                    Qt.openUrlExternally(link)
-                }
+                text: storyText
             }
+            SectionHeader { text: if (storyText != "") { "Story text"} else { "" } }
+
         }
     }
 }

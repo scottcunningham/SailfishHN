@@ -60,10 +60,8 @@ Page {
                         listModel.clear();
                         for (var i = 0; i < response.length && i < 20; i++) {
                             var storyIndex = response[i];
-                            console.log(storyIndex);
                             page.httpRequest("https://hacker-news.firebaseio.com/v0/item/" + storyIndex + ".json", function(doc) {
                                 var story = JSON.parse(doc.responseText);
-                                console.log(story.title);
                                 listModel.append(story);
                             });
                         }
@@ -90,16 +88,10 @@ Page {
                     text: index + ":  " + title
                 }
                 onClicked: {
-                    console.log(title);
-                    console.log(by);
-                    console.log(url);
-                    console.log(type);
-                    console.log(text);
                     pageStack.push(Qt.resolvedUrl("ShowStory.qml"), {"storyBy": by,
                                                                      "storyUrl": url,
                                                                      "storyText": text,
-                                                                     "storyTitle": title}
-                                   );
+                                                                     "storyTitle": title});
                 }
             }
 
